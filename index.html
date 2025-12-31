@@ -6,6 +6,19 @@
     <title>Document</title>
 
 <style>
+            * {
+        box-sizing: border-box;
+        }
+    
+        html, body {
+            width: 100%;
+            overflow-x: hidden; /* stops horizontal scroll */
+        }
+
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+        }
         body {
             margin: 0;
             font-family: "Poppins", sans-serif;
@@ -65,26 +78,30 @@
         }
 
         .card-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            padding: 20px;
-        }
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+        gap: 40px;                             /* more spacing */
+        padding: 30px 5%;                    /* space from edges */
+        justify-items: center;                 /* center cards */
+    }
 
         .card {
-            background: rgba(255, 255, 255, 0.959);
-            border: 3px solid rgb(228, 76, 6);  
-            border-radius: 12px;
-            overflow: hidden;          
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-        }
+        background: rgba(255, 255, 255, 0.959);
+        border: 3px solid rgb(228, 76, 6);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        width: 520px;    
+        height: 340px;          /* BIGGER card */
+        transition: 0.3s ease;     /* smooth hover */
+    }
 
         .card img {
             width: 100%;
-            height: 220px;
+            height: 260px;
             object-fit: cover;         
 
         }
@@ -101,9 +118,9 @@
         }
 
         .card:hover {
-            transform: translateY(-10px);   
-            box-shadow: 0 10px 18px rgba(0,0,0,0.3);
-        }
+        transform: translateY(-12px) scale(1.03);
+        box-shadow: 0 12px 22px rgba(0,0,0,0.35);
+    }
 
         .card-link {
             text-decoration: none;   
@@ -121,6 +138,15 @@
 
         }
 
+        @media (max-width: 900px) {
+        .card-container {
+            grid-template-columns: 1fr; /* 1 card per row on mobile */
+            padding: 30px;
+        }
+
+        .card {
+            width: 100%;
+        }
 
         
     </style>
@@ -133,7 +159,7 @@
         <header>
             
             <div class="brand">
-                <img src="logo mind connect.png" width="50px" >
+                <img src="logo2.png" width="50px" style="border-radius: 50%;" >
                 <h1>MIND CONNECT</h1>
             </div>
 
@@ -150,6 +176,11 @@
             </nav>
         </header>
 
+            <section id="heading">
+        <h1>Your Mental Health Matters <br>
+        One Breath At a Time</h1>
+        </section>
+        
         <div class="card-container">
             
             <a href="page2.html" class="card-link">
@@ -207,7 +238,9 @@
     
     
         </div>
-
+        <section style="text-align: center;font-size: 25px;margin: 15px;color:brown;font-weight: 700;">
+            Hope you had a blast with us! 😊
+        </section>
         <footer>
             <p>&copy; 2025 MindConnect.<br> Your Mental Health is important is Important.</p>
         </footer>
@@ -221,6 +254,7 @@
     
 </body>
 </html>
+
 
 
 
